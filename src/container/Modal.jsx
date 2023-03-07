@@ -5,11 +5,13 @@ import { Button } from '@mui/material';
 const ModalComponent = ({ nft, closeModal }) => {
   return (
     <>
-      <Modal isOpen={!!nft} onRequestClose={closeModal}>
-        <h2>{nft?.name}</h2>
+      <Modal className="modal" isOpen={!!nft} onRequestClose={closeModal}>
+        <h2>Name: {nft?.name}</h2>
         <img src={nft?.image_url} alt={nft?.name} />
-        <p>{nft?.description}</p>
-        <p>Owner: {nft?.owner?.address}</p>
+        <p>Description: {nft?.description}</p>
+        <p>Owner: {nft?.creator?.address}</p>
+        <p>Contract address: {nft?.asset_contract?.address}</p>
+        <p>No. of sales: {nft?.num_sales}</p>
         <Button variant="contained" color="primary" href={nft?.permalink} target="_blank" rel="noopener noreferrer">Purchase</Button>
         &nbsp;&nbsp;
         <Button data-testid='button' variant="contained" onClick={closeModal}>Close</Button>

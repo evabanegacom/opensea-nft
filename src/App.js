@@ -33,7 +33,7 @@ const App = () => {
     <h1 className='title'>NFT LIST</h1>
     <Grid container spacing={3}>
       {nfts?.length ? nfts.map((nft) => (
-        <Nft nft={nft} openModal={openModal} />
+        <Nft nft={nft} key={nft?.id} openModal={openModal} />
       )): <h1>Loading...</h1>}
       <ModalComponent nft={selectedNft} closeModal={closeModal} />
     </Grid>
