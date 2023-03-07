@@ -12,7 +12,7 @@ const ModalComponent = ({ nft, closeModal }) => {
         <p>Owner: {nft?.owner?.address}</p>
         <Button variant="contained" color="primary" href={nft?.permalink} target="_blank" rel="noopener noreferrer">Purchase</Button>
         &nbsp;&nbsp;
-        <Button variant="contained" onClick={closeModal}>Close</Button>
+        <Button data-testid='button' variant="contained" onClick={closeModal}>Close</Button>
       </Modal>
     </>
   )
